@@ -11,11 +11,3 @@ public:
         return false;
     }
 };
-
-/*
-        1   2   3   1
-        uniqueNums = {1}    loop1
-        uniqueNums = {1, 2}    loop2
-        uniqueNums = {1, 2, 3}    loop3
-        uniqueNums = {1, 2, 3}    loop4   return true
-*/
