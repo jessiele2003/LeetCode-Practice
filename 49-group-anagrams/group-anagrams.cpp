@@ -1,29 +1,32 @@
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
-        unordered_map<string, vector<string>> ans;
+        unordered_map<string, vector<string>> store_key;
+        
+        // loop through all the strings in the array
+        // to count the occurence of each letter
         for(int i = 0; i < strs.size(); ++i) {
             string key = getKey(strs[i]);
-            ans[key].push_back(strs[i]);
+            store_key[key].push_back(strs[i]);
         }
 
-        vector<vector<string>> result;
-        for(auto it = ans.begin(); it != ans.end(); ++it) {
-            result.push_back(it->second);
+        vector<vector<string>> answer;
+        for(auto it = store_key.begin(); it != store_key.end(); it++) {
+            answer.push_back(it->second);
         }
-        return result;
+        return answer;
     }
 
 private:
     string getKey(string str) {
         vector<int> count(26);
         for(int i = 0; i < str.size(); ++i) {
-            count[str[i]- 'a']++;
-
+            count[str[i] - 'a']++;
         }
+
         string key = "";
         for(int i = 0; i < count.size(); ++i) {
-            key.append(to_string(count[i] + '#'));
+            key.append(to_string(count[i]) + '#');
         }
         return key;
     }
