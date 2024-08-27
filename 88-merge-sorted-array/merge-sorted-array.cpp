@@ -23,3 +23,7 @@ public:
         }
     }
 };
+
+/* -1 because m and n represents the valid elements of arrays, not the indexes.
+The array index starts at 0, so that the last index should be -1
+*/
