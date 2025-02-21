@@ -8,8 +8,12 @@ public:
         swap(s,t);
         string a = s;
         reverse(s.begin(), s.end());
-        return a == s;
+        for(int i = 0; i < s.size(); ++i) {
+            if(s[i] != a[i])
+                return false;
+        }
+        cout << a << endl;
         cout << s << endl;
-        return false;
+        return true;
     }
 };
