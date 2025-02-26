@@ -10,8 +10,8 @@ public:
         while(s.length() >= 2) {
             string num;
             //cout << "Length: " << s.length() << endl;
-            if(s.length() == 2) {
-                return s[0] == s[1];
+            if(s.length() == 2 && s[0] == s[1]) {
+                return true;
             } 
             else {
                 for(int i = 0; i < s.size() -1 ; ++i) {
